@@ -1,0 +1,55 @@
+Information, so far:
+
+
+First go to the recommender directory from terminal
+
+
+
+
+
+Activate Environment, before working, I don't know if this works on windows
+	mac:
+		source venv/bin/activate
+	windows:
+		call venv/bin/activate.exe
+
+
+	
+
+To add another library:
+	venv/bin/pip3 install <name here>
+
+
+
+
+
+To add another page:
+	add the <htmlname>.html file to templates,
+		and add this piece of code to main.py
+
+	"@app.route( '/<htmlname>' )
+	def <htmlname>( ):
+		return render_template( '<htmlname>.html' )"
+
+
+
+
+To add a text link to a page: ( change text to something else for different types of links )
+	<text>
+		<a href="{{url_for('<htmlname>')}}">Home</a>
+	</text>
+	
+
+
+
+
+
+To run main.py:
+	venv/bin/python3 app/main.py
+
+
+
+
+
+In final version:
+	in the last line of main.py, set debug = False

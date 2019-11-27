@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	</head>
+
+	<body>
+		<h1>Main Page</h1>
+		<text><a href="{{url_for('example')}}">Example</a></text>
+		</br>
+		<text><a href="{{url_for('extend')}}">Extend</a></text>
+	</body>
+	<div class="container">
+		{% block content %}
+		{% endblock %}
+	</div>
+</html>

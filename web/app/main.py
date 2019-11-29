@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from static.scripts.GiveMe import GiveMe
 
 app = Flask( __name__ )
 
@@ -27,6 +28,12 @@ def example( ):
 @app.route( '/extend' )
 def extend( ):
 	return render_template( 'extend.html' )
+
+@app.route( '/three' )
+def three( ):
+	gimme = GiveMe( )
+	return str( gimme.Three( ) )
+	
 
 if __name__ == '__main__':
   app.run( debug = True, host = '0.0.0.0.' )

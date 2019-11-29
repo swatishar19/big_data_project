@@ -23,6 +23,28 @@ To add another library:
 
 
 
+To add a custom built package:
+	make sure function definitions are in a class
+
+	myPackage.py:
+		class myPackage( ):
+			def __init__( self ):
+				#put class params here
+			def myFunction( self ):
+				return "something"
+
+	Put this in the app/static/scripts directory
+
+To import a custom built package:
+	in file;
+		from static.scripts.myPackage import myPackage
+		instance = myPackage( )
+		myPackage.myFunction( )
+
+
+
+
+
 To add another page:
 	add the <htmlname>.html file to templates,
 		and add this piece of code to main.py
@@ -39,7 +61,6 @@ To add a text link to a page: ( change text to something else for different type
 		<a href="{{url_for('<htmlname>')}}">Home</a>
 	</text>
 	
-
 
 
 

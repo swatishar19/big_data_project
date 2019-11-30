@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 from static.scripts.GiveMe import GiveMe
+from static.scripts.pySparkIt import GiveMe
+
 
 app = Flask( __name__ )
 
@@ -33,6 +35,11 @@ def extend( ):
 def three( ):
 	gimme = GiveMe( )
 	return str( gimme.Three( ) )
+
+@app.route( '/version' )
+def version( ):
+	it = GiveMe( )
+	return str( it.pySparkIt( ) )
 	
 
 if __name__ == '__main__':

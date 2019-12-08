@@ -1,0 +1,9 @@
+{% extends "recom.html" %}
+{% block content %}
+<div class="example">
+	<h2>Recommendation Results</h2>
+	{% for result in results %}
+		<p>{{ result }}</p>
+	{% endfor %}
+</div>
+{% endblock %}

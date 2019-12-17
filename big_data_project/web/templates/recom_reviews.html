@@ -1,0 +1,29 @@
+{% extends "recom.html" %}
+{% block content %}
+<div class="example" style="text-align:center">
+	<h2>by reviewing these books:</h2>
+	<p>If you have less than five books, you win!</p>
+	<p>The prize: self satisfaction</p>
+
+	<form action = "{{url_for('recom_results')}}" method = "post">
+		{% for select in selection %}
+			<select name = "rating">
+				<option value = 1>1</option>
+				<option value = 2>2</option>
+				<option value = 3>3</option>
+				<option value = 4>4</option>
+				<option value = 5>5</option>
+			</select>
+			<text>{{ select[ 5 ] }} </text>
+			<input type='text' name = 'title' style="display:none;" value="{{ select[ 5 ] }}">
+			</br>
+			<a href="{{url_for('book', a=select[0], b=select[1], c=select[2], d=select[3], e=select[4], f=select[5], g=select[6])}}" target="_blank"><img src = {{ select[ 2 ] }} height = 300></a>
+			</br>
+			</br>
+		{% endfor %}
+		</br>
+		<h3>The submit is below this sentence, if you were wondering...</h3>
+		<input type = "submit" value = "submit">
+	</form>
+</div>
+{% endblock %}

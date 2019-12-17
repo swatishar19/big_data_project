@@ -1,0 +1,12 @@
+{% extends "search.html" %}
+{% block content %}
+<div class="example" style="text-align:center">
+	<h2>Search Results</h2>
+	{% for result in results %}
+		<p>{{ result[ 5 ] }}</p>
+                <a href="{{url_for('book', a=result[0], b=result[1], c=result[2], d=result[3], e=result[4], f=result[5], g=result[6])}}" target="_blank"><i$nk"><img src = {{ result[ 2 ] }} height = 300></a>
+                </br>
+		<!--<img src = {{ result[ 2 ] }} height = 300>-->
+	{% endfor %}
+</div>
+{% endblock %}

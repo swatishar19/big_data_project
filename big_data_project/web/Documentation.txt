@@ -1,0 +1,92 @@
+Information, so far:
+
+
+First go to the recommender directory from terminal
+
+
+
+
+
+Activate Environment, before working, I don't know if this works on windows
+	mac:
+		source venv/bin/activate
+	windows:
+		call venv/bin/activate.exe
+
+
+	
+
+To add another library:
+	venv/bin/pip3 install <name here>
+
+
+
+
+
+To add a custom built package:
+	make sure function definitions are in a class
+
+	myPackage.py:
+		class myPackage( ):
+			def __init__( self ):
+				#put class params here
+			def myFunction( self ):
+				return "something"
+
+	Put this in the app/static/scripts directory
+
+To import a custom built package:
+	in file;
+		from static.scripts.myPackage import myPackage
+		instance = myPackage( )
+		myPackage.myFunction( )
+
+
+
+
+
+To add another page:
+	add the <htmlname>.html file to templates,
+		and add this piece of code to main.py
+
+	"@app.route( '/<htmlname>' )
+	def <htmlname>( ):
+		return render_template( '<htmlname>.html' )"
+
+
+
+
+To add a text link to a page: ( change text to something else for different types of links )
+	<text>
+		<a href="{{url_for('<htmlname>')}}">Home</a>
+	</text>
+	
+
+
+
+
+To run main.py:
+	venv/bin/python3 app/main.py
+
+
+
+
+
+In final version:
+	in the last line of main.py, set debug = False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

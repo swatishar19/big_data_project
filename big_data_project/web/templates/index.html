@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel = "stylesheet" href = "../static/style/style.css">
+	</head>
+
+	<body>
+		<div style="text-align:center">
+			<h1>Welcome to Book Zenith</h1>
+			<h6>self-proclaimed</h6>
+			<h2><a href="{{url_for('details')}}">Analysis of all Amazon books</a></h2>
+			<p>Enjoy messing with filters?</p>
+			<p>Find yourself typing in random words and word combos</p>
+			<p>in hopes to find something to share with your friends?</p>
+			<p>Then look no further, give our book search engine a go!</p>
+			<h2><a href="{{url_for('search')}}">Search to your heart's content!</a></h2>
+			</br>
+			<p>Want to feel powerful? Want to influence other's recommendations?</p>
+			<p>While at the same time finding some pretty good books for yourself?</p>
+			<p>Is there already enough questions in this summary?</p>
+			<p>Then give our recommender a try!</p>
+			<h2><a href="{{url_for('recom')}}">Go influence someone's recommendations today!</a></h2>
+		</div>
+	</body>
+	<div class="container">
+		{% block content %}
+		{% endblock %}
+	</div>
+</html>

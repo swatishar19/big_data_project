@@ -70,7 +70,7 @@ class testpkg( ):
         			self.reviews2.append((self.reviewerid[x[0]],self.asinNum[x[1]],x[2]))
 		for i in range(len(names)):
     			self.reviews2.append((self.id[-1][1] + 1,self.books.filter(self.books.title==names[i]).head()[0],ratings[i]))
-		self.reviewsF = spark.createDataFrame(reviews2,('reviewerID','asin','overall'))
+		self.reviewsF = self.spark.createDataFrame(reviews2,('reviewerID','asin','overall'))
 		self.model = ALS.train(self.reviewsF,rank=5,numIterations=5)
 		for i in names:
     			self.books.filter(self.books.title==i).head()[0]

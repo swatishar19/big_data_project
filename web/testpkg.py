@@ -74,7 +74,7 @@ class testpkg( ):
 		self.model = ALS.train(self.reviewsF,rank=5,numIterations=5)
 		for i in names:
     			self.books.filter(self.books.title==i).head()[0]
-			self.results = model.recommendProducts(self.id[-1][1] + 1,5)
+			self.results = self.model.recommendProducts(self.id[-1][1] + 1,5)
 			self.recommendations = []
 		for i in range(len(results)):
    			for key, value in asinNum.items(): 
